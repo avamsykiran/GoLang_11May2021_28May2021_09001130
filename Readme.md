@@ -1,0 +1,197 @@
+https://github.com/avamsykiran/GoLang_11May2021_28May2021_09001130.git
+==========================================================================
+
+IDE:        VS Code     https://code.visualstudio.com/download
+Compile:    Go          https://golang.org/dl/
+
+--------------------------------------------------------------
+
+Go  Lang
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+        GPL
+
+Features
+
+        1. Simple Familiar Syntax.
+        2. Concurrent
+        3. Resource 
+        4. Distributed
+        5. Compiler + Linker
+
+Package         is a logical block of code.
+                is a go approach to modularization.
+
+Data Types:
+-------------------------
+
+    Primitive:
+        Numeric:
+            uint8   unsigned 8-bit integers (0 to 255)
+            uint16  Unsigned 16-bit integers (0 to 65535)
+            uint32  Unsigned 32-bit integers (0 to 4294967295)
+            uint64  Unsigned 64-bit integers (0 to 18446744073709551615)
+            int8    Signed 8-bit integers (-128 to 127)     
+            int16   Signed 16-bit integers (-32768 to 32767)	
+            int32   Signed 32-bit integers (-2147483648 to 2147483647)
+            int64   Signed 64-bit integers (-9223372036854775808 to 9223372036854775807)
+            
+            byte    same as uint8
+            rune    same as int32
+            uint    32 or 64 bits
+            int     same size as uint
+            uintptr an unsigned integer 
+                    to store the uninterpreted bits of a pointer value
+
+            float32     IEEE-754 32-bit floating-point numbers
+            float64     IEEE-754 64-bit floating-point numbers
+            complex64   Complex numbers with float32 real and imaginary parts
+            complex128  Complex numbers with float64 real and imaginary parts
+
+        Non Numeric:
+            bool
+            string
+
+
+Operators
+-------------------------------------------------
+
+        Binary
+                Arithemtic
+                        +
+                        -
+                        *
+                        /
+                        %
+                Relational 
+                        ==
+                        <
+                        >
+                        <=
+                        >=
+                        !=
+                Logical
+                        &&
+                        ||
+                        !
+                Assignment Operatos
+                        =
+                        +=              a+=b;           a = a + b;
+                        -=
+                        *=
+                        /=
+                        %=
+
+                        &=
+                        |=
+                        ^=
+                        ~=
+        Bitwise
+                &               0&0 1&0 0&1             0
+                                1&1                     1
+                
+                |               0|0                     0
+                                1|1 0|1 1|0             1
+
+                ^               0^0 1^1                 1
+                                0^1 1^0                 0
+
+                ~               ~0                      1
+                                ~1                      0
+
+        Unary
+                        ++
+                        --
+
+                        var x,y,z int;
+
+                        x = 10;
+
+                        y = ++x;    // x->11, y=11
+                        z = x++;    // z->11, x->12
+
+Decision Making Control Structures
+---------------------------------------------
+
+                if (bool_exp) {
+
+                }
+
+                if (bool_exp) {
+                        //true blockm of code
+                }else{
+                        //false block of code.
+                }
+
+                Switch Statement
+                ------------------------------
+                                switch(exp){
+                                        case val1:
+                                                code-blcok-1;
+                                        case val2:
+                                                code-block-2;
+                                        case val3:
+                                                code-block-3;
+
+                                        default:
+                                                defalut-code-block;
+                                }
+
+                                switch {
+                                        case exp:
+                                                code-1;
+                                        case exp2:
+                                                code-2;
+                                        case exp3:
+                                                code-3...;
+
+                                        default:
+                                                defualt-code;
+                                }
+
+                                switch x.(type) {
+                                        case type1:
+                                         code...
+                                        case type2:
+                                         code..
+                                        defualt:
+                                         default-code..
+                                }
+
+                                select {
+                                        case exp:
+                                                code-1;
+                                        case exp2:
+                                                code-2;
+                                        case exp3:
+                                                code-3...;
+
+                                        default:
+                                                defualt-code;
+                                }
+                                
+
+Looping Controls Strucutres
+-------------------------------------
+
+                loop goto
+                for 
+
+                        Indefinite loop
+                                
+                                for bool_exp {
+                                        ...............
+                                }
+
+                        Definite loop
+
+                                for i:=initalVal;bool_exp;inc/dec {
+                                        ...............
+                                }
+
+Non-Conditional Control Statements
+
+                        break
+                        continue
+                        goto 
+
