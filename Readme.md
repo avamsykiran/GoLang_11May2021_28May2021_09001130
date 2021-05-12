@@ -262,8 +262,8 @@ Non-Conditional Control Statements
 
                 var nums = [5]int{1,2,3,4,5}
 
-                Len(array)              number of eles
-                Cap(array)              saem as Len
+                len(array)              number of eles
+                cap(array)              saem as Len
 
                 nums[4] ----------> 5
 
@@ -281,6 +281,6 @@ Non-Conditional Control Statements
                  s3 := nums[4:8] //s3 contains 4th to 8th ele of the nums array
 
 
-                Len(slice)              number of eles in that slice
-                Cap(slice)              number of eles in the array of te slice, starting from the first
+                len(slice)              number of eles in that slice
+                cap(slice)              number of eles in the array of te slice, starting from the first
                                                 ele in the slice
