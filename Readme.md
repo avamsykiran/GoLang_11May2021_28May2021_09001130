@@ -52,6 +52,23 @@ Data Types:
             bool
             string
 
+Escape Sequences
+------------------------------------------------
+
+        \n              new line
+        \t              tab space
+        \r              carrage return
+        \\              escape a \
+        \"              escape a "
+
+format specifiers
+-------------------------------------------------
+
+        %d
+        %ld
+        %f
+        %c
+        %s
 
 Operators
 -------------------------------------------------
@@ -109,6 +126,17 @@ Operators
 
                         y = ++x;    // x->11, y=11
                         z = x++;    // z->11, x->12
+
+        Short hand Declaration Operator
+
+                :=
+
+                var a int = 45;
+
+                var a int;
+                a = 45;
+
+                a := 45; //type is infered.
 
 Decision Making Control Structures
 ---------------------------------------------
@@ -175,6 +203,7 @@ Looping Controls Strucutres
 -------------------------------------
 
                 loop goto
+
                 for 
 
                         Indefinite loop
@@ -195,3 +224,63 @@ Non-Conditional Control Statements
                         continue
                         goto 
 
+        Functions
+        ---------------------------------------------
+
+                sub-programs - self contianed block of code-
+                targeting a specific action/operation.
+
+                func funName(param1 type,param2 type..)  {
+                        
+                }
+
+                func funName(param1 type,param2 type..) returnType {
+                        return soemthing;
+                }
+
+                func funName(param1 type,param2 type..) (returnType1,returnType2) {
+                        return value1,value2;
+                }
+
+                Anonymous Functions
+                        function with no name
+                
+                High Order Functions
+                        function that return another function
+
+                Closures
+                        High order function that can
+                        encapsulate a persisting state.
+                
+
+        Arrays
+        -----------------------------------------------------------
+
+                var arr [size]type
+
+                var nums [10]int
+
+                var nums = [5]int{1,2,3,4,5}
+
+                Len(array)              number of eles
+                Cap(array)              saem as Len
+
+                nums[4] ----------> 5
+
+                range           this is keyword that returns 
+                                        the index and ele from the 
+                                        givne array until no more eles are left.
+
+
+        Slice
+        ------------------------------------------------------------
+                 slice is a small part of an array.
+
+                 s1 := nums[:7]; //s1 contains 0 to 7th eles of the nums array
+                 s2 := nums[3:]; //s2 contains 3rd to last ele of the nums array
+                 s3 := nums[4:8] //s3 contains 4th to 8th ele of the nums array
+
+
+                Len(slice)              number of eles in that slice
+                Cap(slice)              number of eles in the array of te slice, starting from the first
+                                                ele in the slice

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-func greetGenerator(_greetNote string) func(string) string {
-	greetNote := _greetNote
+func greetGenerator(input string) func(string) string {
+	greetNote := input
 
 	return func(unm string) string {
 		return greetNote + unm

@@ -9,8 +9,8 @@ func main() {
 	var slice2 = nums[4:7]
 	var slice3 = nums[7:]
 
-	fmt.Println(nums,"Len: ",len(nums),"Cap: ",cap(nums))
-	fmt.Println(slice1,"Len: ",len(slice1),"Cap: ",cap(slice1))
-	fmt.Println(slice2,"Len: ",len(slice2),"Cap: ",cap(slice2))
-	fmt.Println(slice3,"Len: ",len(slice3),"Cap: ",cap(slice3))
+	fmt.Println(nums, "Len: ", len(nums), "Cap: ", cap(nums))
+	fmt.Println(slice1, "Len: ", len(slice1), "Cap: ", cap(slice1))
+	fmt.Println(slice2, "Len: ", len(slice2), "Cap: ", cap(slice2))
+	fmt.Println(slice3, "Len: ", len(slice3), "Cap: ", cap(slice3))
 }
