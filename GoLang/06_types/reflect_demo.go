@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
-import "reflect"
+import (
+	"fmt"
+	"reflect"
+)
 
 type pen struct {
 	nib      float32
@@ -18,10 +20,11 @@ func main() {
 	y := 3.14
 	z := true
 	l := "Hello"
+	m := '@'
 
 	fmt.Printf("%T\n", x)
 	fmt.Printf("%T\n", y)
 	fmt.Printf("%T\n", z)
 	fmt.Printf("%T\n", l)
-
+	fmt.Printf("%T\n", m)
 }

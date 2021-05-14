@@ -2,17 +2,26 @@ package main
 
 import "fmt"
 
-type pen struct {
-	nib float32
-	inkColor string
+type loan struct {
+	p, t, r float64
 }
 
-func (p pen) display(){
-	fmt.Println("Nib: ",p.nib,"\tInkColor: ",p.inkColor)
+func (l loan) simpleInterest() float64 {
+	return (l.p * l.t * l.r) / 100
 }
 
-func main(){
-	p1 := pen{0.4,"blue"}
+func (l loan) laonAmount() float64 {
+	return l.p + l.simpleInterest()
+}
 
-	p1.display();
+func main() {
+	l1 := loan{
+		p: 10000,
+		t: 1,
+		r: 12,
+	}
+
+	fmt.Println(l1)
+	fmt.Println(l1.simpleInterest())
+	fmt.Println(l1.laonAmount())
 }

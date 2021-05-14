@@ -284,3 +284,138 @@ Non-Conditional Control Statements
                 len(slice)              number of eles in that slice
                 cap(slice)              number of eles in the array of te slice, starting from the first
                                                 ele in the slice
+
+        Assignments
+        ----------------------------------------
+        Bubble Sort
+        Selection Sort
+        Quick Sort              //recurisve funcitons
+        Binary Search
+
+        RegExp
+        ---------------------------------------------------
+                Is a language sued for 
+                constructing string patterns.
+
+                \s      the matching char must be a space
+                \S      the matching char must not be a space
+                \w      the matchign char must be a word
+                \W      the matchign char must not be a word
+                \d      the matching char must be a digit
+                \D      the matching char must not be a digit
+                .       the matchign char cna be anything
+
+                [A-Z]   the matching char cna be a capital alpha
+                [a-z]   the matching char cna be a lower alpha
+                [A-za-z]the matching char cna be a capital/lower alpha
+                [0-9]   the matching char can be a digit
+
+                [^A-Z]  the matching char can be anything other than A-Z
+
+                [5-7]{3}        three digits ranging from 5 to 7
+
+                [A-D]{0,5}      a string of 0 to 5 chars in length and must comprise of
+                                        A to D only.
+
+                +               1 or more occurences
+                *               0 or more occurences
+                ?               0 or 1 occurence
+
+        User Defined Data Types
+        -------------------------------------------------
+        types
+
+                structures
+                ------------------------------------------------
+                        is a user defiend data types
+                        that can represent the properties
+                        of an entity as members.
+
+                        A Loan has
+                                a principal
+                                a timePeriod
+                                a rateOfInterest
+                                a simpleInterest
+
+                        type loan struct {
+                          p,t int
+                          r float64
+                        }
+
+                        func (l loan) simpleInterest() float64 {
+                                return (l.p * l.t * l.r) / 100
+                        }
+                        
+                        var l1,l2 loan
+
+                        l1.p = 789;
+
+                        var l3 loan = loan{
+                                p:890,
+                                t:6,
+                                r:0.10
+                        }
+
+                        var l4 loan = loan{1000,10,10,0}
+
+
+                        Anonymous Fields / members
+                        ----------------------------
+
+                        type dummy struct{
+                                string
+                                bool
+                                int
+                        }
+
+                        d := dummy{"Apple",true,450}
+
+                        dummy.bool = false;
+
+                        Anonymous Structures
+                        ------------------------------
+
+                                a structur with no name
+
+                                st := struct {
+                                        field1 string
+                                        field2 int
+                                        field3 bool
+                                }{
+                                        field1: "soem value",
+                                        field2: 56,
+                                        field3: false,
+                                }
+
+                        Nested Structures / Embeded Structres
+                        ------------------------------------------------
+
+                                as an a excersise for compositon/inheretence
+
+                                type str1 struct{
+                                        f1 int
+                                }
+
+                                type str2 struct{
+                                        f2 string
+                                        s1 str1
+                                }
+
+                                v1 := str1{90};
+                                v2 := str2{
+                                        f2:"Apple",
+                                        s1: str1{120},
+                                };
+
+                                v2.f2 = "mangoes";
+                                v2.s1.f1 =990;
+
+                                composition is excersised through nested structures
+                                inheretence is excersised through nested structures 
+                                                        + anonymous fields 
+                                                        + field promotion 
+
+                interfaces
+                maps
+
+
