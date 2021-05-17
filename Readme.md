@@ -415,7 +415,46 @@ Non-Conditional Control Statements
                                                         + anonymous fields 
                                                         + field promotion 
 
-                interfaces
-                maps
+                Assignment
+                ----------------------------------
 
+                        bankAccount     accnum,bal,branch,ifsc
+
+                        address         doorNum,street,city
+
+                        vendor          vid,title,account,contactAddress
+
+                        customer        cid,title,deliveryAddress
+
+                interfaces
+                ------------------------------------------------
+                        is a user defined data type that
+                        has a set of method declarations that
+                        can be implemented by structures.
+
+                        interfaces provide abstraction and polymorphisim.
+
+                maps
+                --------------------------------------------------------
+
+                        a map is a key-value pair collection.
+
+
+
+        Pointers
+        -------------------------------------------------
+        
+                a pointer is a variable that can
+                store the address of another variable.
+
+                v1 := 45
+
+                fmt.Println(v1) ----------------> 45
+                fmt.Println(&v1) ----------------> 'address of v1'
+
+                vptr := &v1
+
+                fmt.Println(vptr) ----------------> 'address of v1' 
+                fmt.Println(&vptr) ----------------> 'address of vptr'
+                fmt.Println(*vptr) ----------------> 45
 

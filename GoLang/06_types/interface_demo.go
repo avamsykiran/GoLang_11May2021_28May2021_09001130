@@ -2,44 +2,51 @@ package main
 
 import "fmt"
 
-type board interface {
+type shape interface {
 	area() float32
-	perimeter() float32
+	periemter() float32
 }
 
-func estimatePaintingAndBorderingCost(b board) (float32, float32) {
-	return b.area() * 5, b.perimeter() * 3
+type rect struct {
+	length, breadth float32
 }
 
-type rect_board struct {
-	length  int
-	breadth int
+func (r rect) area() float32 {
+	return r.length * r.breadth
 }
 
-func (r rect_board) area() float32 {
-	return float32(r.length * r.breadth)
+func (r rect) periemter() float32 {
+	return 2 * (r.length + r.breadth)
 }
 
-func (r rect_board) perimeter() float32 {
-	return float32(2 * (r.length + r.breadth))
-}
-
-type circular_board struct {
+type circle struct {
 	radius float32
 }
 
-func (c circular_board) area() float32 {
+func (c circle) area() float32 {
 	return 3.14 * c.radius * c.radius
 }
 
-func (c circular_board) perimeter() float32 {
+func (c circle) periemter() float32 {
 	return 2 * 3.14 * c.radius
 }
 
-func main() {
-	r1 := rect_board{10, 7}
-	c1 := circular_board{3.67}
+func estimateCost(s shape) float32 {
+	paintCost := 12.0 * s.area()
+	borderCost := 5.0 * s.periemter()
+	return paintCost + borderCost
+}
 
-	fmt.Println(estimatePaintingAndBorderingCost(r1))
-	fmt.Println(estimatePaintingAndBorderingCost(c1))
+func main() {
+	r1 := rect{12.0, 10.0}
+	r2 := rect{5.0, 4.0}
+
+	fmt.Println(estimateCost(r1))
+	fmt.Println(estimateCost(r2))
+
+	c1 := circle{12.34}
+	c2 := circle{5.56}
+
+	fmt.Println(estimateCost(c1))
+	fmt.Println(estimateCost(c2))
 }
