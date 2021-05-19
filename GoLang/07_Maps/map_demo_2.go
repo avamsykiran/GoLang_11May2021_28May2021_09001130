@@ -26,7 +26,7 @@ func createNewEmployee() employee {
 
 func acceptChoice() int {
 	fmt.Println("1\tList Employees")
-	fmt.Println("2\tAdd Employees")
+	fmt.Pr intln("2\tAdd Employees")
 	fmt.Println("3\tDelete Employees")
 	fmt.Println("4\tSearch Employees")
 	fmt.Println("5\tExit")

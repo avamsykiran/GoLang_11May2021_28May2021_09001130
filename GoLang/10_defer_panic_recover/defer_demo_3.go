@@ -5,11 +5,11 @@ import "fmt"
 func quitiont(divident, divisor int) (q int, errMsg string) {
 	defer func() {
 		if err := recover(); err != nil {
-			errMsg = "Invalid Divisor"
+			errMsg = "Zero is not a qualified divisor"
 		}
 	}()
 
-	return divident / divisor, ""
+	return divident / divisor, nil
 }
 
 func main() {

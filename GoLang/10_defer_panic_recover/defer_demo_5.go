@@ -4,14 +4,21 @@ import "fmt"
 import "errors"
 
 func simpleInterest(p, t, r int) int {
+
+	var errMsg string = "";
+
 	if p < 0 {
-		panic("Invalid Loan Amount")
+		errMsg = "Invalid Loan Amount"
 	}
 	if r < 0 {
-		panic("Invalid rate of interest")
+		errMsg += "\nInvalid rate of interest")
 	}
 	if t < 0 {
-		panic("Invalid time period")
+		errMsg += "Invalid time period"
+	}
+
+	if errMsg !="" {
+		panic(errMsg);
 	}
 
 	return (p * t * r) / 100

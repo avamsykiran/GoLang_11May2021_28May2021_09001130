@@ -439,8 +439,6 @@ Non-Conditional Control Statements
 
                         a map is a key-value pair collection.
 
-
-
         Pointers
         -------------------------------------------------
         
@@ -457,4 +455,25 @@ Non-Conditional Control Statements
                 fmt.Println(vptr) ----------------> 'address of v1' 
                 fmt.Println(&vptr) ----------------> 'address of vptr'
                 fmt.Println(*vptr) ----------------> 45
+
+                Call By Reference
+                Dynamic Memory Allocation
+
+        defer, panic and recover
+        ---------------------------------------------------------------------
+
+                defer is a keyword that postpones the execution of 
+                a function call, until the caller function completes.
+
+                panic is a built in function used to abruptly
+                end the execution of the current function and raise
+                an error....
+
+                recover is a built in function used to receive, and error
+                if one exits, when ever recover() is called, we get 'nil'
+                if no error occured, ore else it retrive the value passed to
+                the panic that occured.
+
+
+
 
