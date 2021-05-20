@@ -1,42 +1,38 @@
 package main
 
-import "fmt"
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
-func generateSeries(threadName string, start int, end int, isReverse bool) chan string {
-	ch := make(chan string)
+func generateSeries(start int, end int) <-chan int {
+	ch := make(chan int)
 
 	go func() {
-		if !isReverse {
-			for i := start; i <= end; i++ {
-				ch <- fmt.Sprint(threadName, ">> ", i)
-				time.Sleep(time.Second)
-			}
-		} else {
-			for i := start; i >= end; i-- {
-				ch <- fmt.Sprint(threadName, ">> ", i)
-				time.Sleep(time.Second)
-			}
+
+		for i := start; i <= end; i++ {
+			ch <- i
+			time.Sleep(time.Second)
 		}
+
 		close(ch)
 	}()
 	return ch
 }
 
-
 func main() {
-	thd1 := generateSeries("thd1", 1, 10, false)
-	thd2 := generateSeries("thd2", 10, 1, true)
+	thd1 := generateSeries(1, 10)
+	thd2 := generateSeries(100, 110)
 
-	for{
+	for {
 		select {
-		case data1 := <- thd1:
-			fmt.Println(data1)
-		case data2 := <- thd2:
-			fmt.Println(data2)
-		case <-time.After(2*time.Second):
+		case data1 := <-thd1:
+			fmt.Println("From First Thread>> ", data1)
+		case data2 := <-thd2:
+			fmt.Println("From Second Thread>> ", data2)
+			/*case <-time.After(2 * time.Second):
 			fmt.Println("Termianted Because of time out")
-			break
+			break */
 		}
 	}
 }

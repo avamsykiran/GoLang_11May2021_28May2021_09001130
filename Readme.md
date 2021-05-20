@@ -474,6 +474,92 @@ Non-Conditional Control Statements
                 if no error occured, ore else it retrive the value passed to
                 the panic that occured.
 
+        Concurrent Programming / asynchronous programming
+        ---------------------------------------------------------------------
 
 
+                Multi Tasking / Multi Processing                Multi Thread
+                =========================================================================
+                OS  manages multi-tasking                       OS to mange multi-thread
 
+                executing individual apps parellalelly          executing sub-routines of 
+                                                                the same app parellelly 
+                
+                Each process has a separate                     Each thread has separate
+                and is isolated always.                         thread-context and
+                                                                they share the same heap.
+                context =                                              thread-context
+                        programCount                                            programCount
+                        stack                                                   stack
+                        heap                                                    registries
+                        registreis
+
+
+                go functionCall()
+
+                time package
+                             sleep method is used to pause our current thread
+
+                Channels
+
+                        a channel is a stream of data 
+                        into which one can send 
+                        and other can receive 
+
+                        both sender and receiver has to wait,
+                        until the opponent is done.
+
+                        <-      channel operator
+
+                        ch := make(chan int)
+
+                        ch<-90          //writing into the ch
+
+                        x:= <-ch        //reading from the channel
+
+                select-case statement
+
+                        select {
+                            case <-ch1:
+                                dosoemthing..........
+                            case <-ch2:
+                                soemthing else.....    
+                        }
+
+                Synchronization
+                -------------------------------------------------------
+
+                        control the acess of multiple threads to shared memory/ data
+
+                        a Bucket of water
+                                emp1 should fill the bucket using a mug
+                                emp2 should empty the bucket using a equal sized mug
+
+                                1) If the bucket is empty:
+                                        emp2 should wait until the bucket is refiled\
+                                2) If the bucket is full:
+                                        emp1 should wait until the bucket is a little emptied
+                                3) If the bucket is full some arbitary level
+                                        emp1 should fill the bucket using a mug
+                                        emp2 should empty the bucket using a equal sized mug
+                                
+                Monitor and Lock Machanisim
+
+                        resource is locked as and
+                        when a thread starts usign it.
+
+                        the resource will not available for any other thread.
+
+                        a monitor ensures that the resource is unlocked
+                        once the current thread accomplishes its job.
+
+                Wait and notify machanisim
+
+                        the current thread can choose to wait
+                        even before the job is done, and 
+                        the other waiting threads are notified...!
+
+                        so that the locked resource cna be realeased
+                        for the next witing thread,
+
+                        
