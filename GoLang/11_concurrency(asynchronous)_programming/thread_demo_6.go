@@ -26,13 +26,19 @@ func main() {
 
 	for {
 		select {
-		case data1 := <-thd1:
-			fmt.Println("From First Thread>> ", data1)
-		case data2 := <-thd2:
-			fmt.Println("From Second Thread>> ", data2)
-			/*case <-time.After(2 * time.Second):
-			fmt.Println("Termianted Because of time out")
-			break */
+		case data1, ok := <-thd1:
+			fmt.Println("From First Thread>> ", data1, ok)
+			if !ok { //if channel is clsoed
+				thd1 = nil
+			}
+		case data2, ok := <-thd2:
+			fmt.Println("From Second Thread>> ", data2, ok)
+			if !ok { //if channel is clsoed
+				thd2 = nil
+			}
+		}
+		if thd1 == nil && thd2 == nil {
+			break
 		}
 	}
 }

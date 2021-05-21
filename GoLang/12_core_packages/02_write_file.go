@@ -1,11 +1,12 @@
 package main
 
-import "fmt"
-import "os"
-import "strings"
+import (
+	"fmt"
+	"os"
+	"strings"
+)
 
 func main() {
-
 	var fnm string
 	fmt.Print("file name? ")
 	fmt.Scanln(&fnm)

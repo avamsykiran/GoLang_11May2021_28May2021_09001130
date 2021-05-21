@@ -22,8 +22,8 @@ func allocateSeat(pgrs []passenger, b *bus) chan struct{} {
 		for i := 0; i < len(pgrs); i++ {
 			if (*b).currentVacant <= (*b).maxSeats {
 				pgrs[i].seatNo = (*b).currentVacant
-				time.Sleep(time.Millisecond)
-				(*b).currentVacant++				
+				time.Sleep(time.Millisecond) //create some latency.....
+				(*b).currentVacant++
 			} else {
 				break
 			}

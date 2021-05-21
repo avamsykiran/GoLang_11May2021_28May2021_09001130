@@ -517,6 +517,9 @@ Non-Conditional Control Statements
 
                         x:= <-ch        //reading from the channel
 
+                        x,ok:= <-ch    //reading from the channel,
+                                        //ok is true if channel is still open.
+
                 select-case statement
 
                         select {
@@ -526,10 +529,28 @@ Non-Conditional Control Statements
                                 soemthing else.....    
                         }
 
+                signal
+                                is any channel that does not produce data,
+                                but is used only to inform the compeltion
+                                of a goroutine...     
+
                 Synchronization
                 -------------------------------------------------------
 
                         control the acess of multiple threads to shared memory/ data
+
+                        
+                Monitor and Lock Machanisim
+
+                        resource is locked as and
+                        when a thread starts usign it.
+
+                        the resource will not available for any other thread.
+
+                        a monitor ensures that the resource is unlocked
+                        once the current thread accomplishes its job.
+
+                Wait and notify machanisim / Producer-Consumer Pattern
 
                         a Bucket of water
                                 emp1 should fill the bucket using a mug
@@ -543,18 +564,6 @@ Non-Conditional Control Statements
                                         emp1 should fill the bucket using a mug
                                         emp2 should empty the bucket using a equal sized mug
                                 
-                Monitor and Lock Machanisim
-
-                        resource is locked as and
-                        when a thread starts usign it.
-
-                        the resource will not available for any other thread.
-
-                        a monitor ensures that the resource is unlocked
-                        once the current thread accomplishes its job.
-
-                Wait and notify machanisim
-
                         the current thread can choose to wait
                         even before the job is done, and 
                         the other waiting threads are notified...!
@@ -562,4 +571,9 @@ Non-Conditional Control Statements
                         so that the locked resource cna be realeased
                         for the next witing thread,
 
+                        The channels are by default synchroinized
+                        and hence the wait / notify is always
+                        available no extra cost.
+
+        
                         
