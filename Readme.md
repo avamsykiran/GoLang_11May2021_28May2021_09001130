@@ -575,5 +575,36 @@ Non-Conditional Control Statements
                         and hence the wait / notify is always
                         available no extra cost.
 
+        Go Lang Custom Packages
+        ---------------------------------------
+
+                go env -w go111module off
+
+                this cmd is sued to switch the manditory module
+                of go 'off' so that the packages can be used
+                with out converting them into modules.
+
+                Workspace
+                -------------------------
+                        src             *.go
+                        ----------
+                                pack1
+                                        pack1.go
+                                pack2
+                                        pack2.go
+                                app
+                                        app.go
+
+
+                        bin             *.exe
         
-                        
+                
+                go run          compile and execute the program
+                                        but no output is written
+
+                go build        compiles and write the exe file in the same folder
+
+                go install      compile and write the exe into a path pointed by
+                                                'gobin'
+
+                set gobin=F:\IIHT\Cognizent\DTP_2021\GoLang_11May2021_28May2021_09001130\GoLang\09_Workspaces\bin

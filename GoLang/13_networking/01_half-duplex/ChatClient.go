@@ -9,14 +9,16 @@ import (
 func client() {
 	// connect to the server
 	c, err := net.Dial("tcp", "127.0.0.1:9999")
+
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
+	var msg string
+
 	for {
 		fmt.Println("Enter message: ")
-		msg := ""
 		fmt.Scanln(&msg)
 		fmt.Println("Sending", msg)
 
@@ -24,7 +26,7 @@ func client() {
 		if err != nil {
 			fmt.Println(err)
 		}
-		if msg=="quit"{
+		if msg == "quit" {
 			break
 		}
 	}

@@ -9,17 +9,21 @@ import (
 func server() {
 	// listen on a port
 	ln, err := net.Listen("tcp", ":9999")
+
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+
 	for {
 		// accept a connection
 		c, err := ln.Accept()
+
 		if err != nil {
 			fmt.Println(err)
 			continue
 		}
+
 		// handle the connection
 		ch := make(chan struct{})
 		go handleServerConnection(c, ch)
