@@ -1,16 +1,18 @@
 package services
 
-import "models"
-import "errors"
+import (
+	"errors"
+	"models"
+)
 
 var contacts []models.Contact
 
 func init() {
 	//initialize some hypothetical data
 	contacts = []models.Contact{}
-	contacts = append(contacts, models.Contact{101, "Vamsy", "Kiran", "9052224753", "9550204753", "vamsy.kiran@iiht.com"})
-	contacts = append(contacts, models.Contact{102, "Sagar", "Guru", "9948016004", "9948016664", "sagar@gmail.com"})
-	contacts = append(contacts, models.Contact{103, "Suseela", "Aripaka", "9052444753", "9550244753", "suseela@gmail.com"})
+	contacts = append(contacts, models.Contact{101, "Vamsy", "Kiran", "9052224753", "9550204753", "v.k@iiht.com"})
+	contacts = append(contacts, models.Contact{102, "Sagar", "Guru", "9948016004", "9948016664", "s@gmail.com"})
+	contacts = append(contacts, models.Contact{103, "Suseela", "Aripaka", "9052444753", "9550244753", "ss@gmail.com"})
 }
 
 func indexOf(cid int) int {

@@ -578,7 +578,7 @@ Non-Conditional Control Statements
         Go Lang Custom Packages
         ---------------------------------------
 
-                go env -w go111module off
+                go env -w GO111MODULE=off
 
                 this cmd is sued to switch the manditory module
                 of go 'off' so that the packages can be used
@@ -608,3 +608,23 @@ Non-Conditional Control Statements
                                                 'gobin'
 
                 set gobin=F:\IIHT\Cognizent\DTP_2021\GoLang_11May2021_28May2021_09001130\GoLang\09_Workspaces\bin
+
+        Go Modules
+        -------------------------------------------------------------------------
+
+                A go module is a collection of
+                go packages. (1.11)
+
+                        go.mod                  meta,dependency list
+
+                        go mod init
+
+        Mulit-Layer
+        ---------------------------------
+
+                DAO                             any database connectivity
+                Service                         hold any bussiness logic
+                Controller and View             flow of the app and view
+                Model                           hold the data and make it
+                                                travel amongst the other layers
+                                                        to share the data.

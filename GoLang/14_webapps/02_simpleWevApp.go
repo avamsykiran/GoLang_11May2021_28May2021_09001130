@@ -1,13 +1,15 @@
 package main
 
-import "fmt"
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
 
 	http.HandleFunc("/", func(writer http.ResponseWriter, req *http.Request) {
 
-		responseBody := "<h1>This is a simpel golang web</h1>"
+		responseBody := "<h1>This is a simple golang web</h1>"
 
 		responseBody += "<hr/>"
 		responseBody += "<br /> Method: " + req.Method
