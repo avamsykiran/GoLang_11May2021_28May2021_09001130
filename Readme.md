@@ -609,16 +609,6 @@ Non-Conditional Control Statements
 
                 set gobin=F:\IIHT\Cognizent\DTP_2021\GoLang_11May2021_28May2021_09001130\GoLang\09_Workspaces\bin
 
-        Go Modules
-        -------------------------------------------------------------------------
-
-                A go module is a collection of
-                go packages. (1.11)
-
-                        go.mod                  meta,dependency list
-
-                        go mod init
-
         Mulit-Layer
         ---------------------------------
 
@@ -628,3 +618,78 @@ Non-Conditional Control Statements
                 Model                           hold the data and make it
                                                 travel amongst the other layers
                                                         to share the data.
+        
+        Go Modules
+        -------------------------------------------------------------------------
+
+                A go module is a collection of
+                go packages. (1.11)
+
+                        go env -w GO111MODULE=on
+                                        will enable the modules feature.
+
+                        go.mod                  meta,dependency list
+
+                        go mod init <modName>
+                                        modName msut be mentioned if we
+                                        have not created a folder by that name.
+
+                Workspace structure
+                ----------------------------------------------
+
+                        ENV VARIABLES
+
+                                GOROOT          points to the go instalaltion directory
+                                GOPATH          point to the workspace, where
+                                                        all our project lie.
+
+                                                by default /users/vamsy/go/....
+                                GOBIN           points to the directory where
+                                                go intall tool whall create the .exe file.
+                                                        if GOPATH is not set.
+
+                        GOPATH\src              expected to contain all go packages and src code
+                        GOPATH\bin              expected to contain all .exe....
+                        GOPATH\pkg              expected hold thrid party lib...
+
+
+                        a typical workspace hirarchy
+                        -----------------------------------------------------
+
+                        GOPATH=d:\MyGoWorkspace
+
+                        d:\MyGoWorkspace
+                        -----------------------
+                                bin
+                                pkg
+                                src
+                                 |-app1
+                                 |   |-mypack
+                                 |   |   |-packfile1.go  the mypack package
+                                 |   |   |-packfile2.go  the mypack package
+                                 |   |-app1.go            the main package
+                                 |   |-go.mod
+                                 |-app2                   the main package
+                                 |   |-app2.go
+                                 |   |-go.mod
+                                 |-app3
+                                 |   |-app3.go          the main package
+                                 |   |-go.mod
+
+
+        REST api
+        ---------------------------------------------------------------
+        
+        Create          POST
+        Retrive         GET
+        Update          PUT/PATCH
+        Deleting        DELETE
+        Debugging       TRACE
+
+                encoding/json            inbuilt package used for parsing json to golang objects and viceversa
+
+
+                github.com/gorilla/mux   thrid party router package to host rest api.
+
+                go get github.com/gorilla/mux
+
