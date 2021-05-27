@@ -680,11 +680,14 @@ Non-Conditional Control Statements
         REST api
         ---------------------------------------------------------------
         
-        Create          POST
-        Retrive         GET
-        Update          PUT/PATCH
-        Deleting        DELETE
-        Debugging       TRACE
+        /contacts
+
+        Create          POST            /contacts               request body
+        Retrive         GET             /contacts
+        Retrive         GET             /contacts/101
+        Update          PUT             /contacts/101           request body
+        Deleting        DELETE          /contacts/101
+       
 
                 encoding/json            inbuilt package used for parsing json to golang objects and viceversa
 
@@ -692,4 +695,7 @@ Non-Conditional Control Statements
                 github.com/gorilla/mux   thrid party router package to host rest api.
 
                 go get github.com/gorilla/mux
+
+                PostMan		as windows app / as chrome extension
+                Insomnia	as windows app
 
