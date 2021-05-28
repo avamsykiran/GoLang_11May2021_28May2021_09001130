@@ -699,3 +699,24 @@ Non-Conditional Control Statements
                 PostMan		as windows app / as chrome extension
                 Insomnia	as windows app
 
+        Revel
+        ---------------------------------------------------------------------------
+        
+        Setting the paths
+                On Windows
+                        set GOPATH=Your\WorkSpace\Path
+                        set PATH=%PATH%;%GOPATH%\bin;
+                
+                On Linux
+                        export GOPATH="Your/WorkSpace/Path"
+                        export PATH="$PATH:$GOPATH/bin"
+
+        Installing the Framework and Command Line Tool
+                go get github.com/revel/revel
+                go get github.com/revel/cmd/revel
+
+        Creating the project
+                revel new app-name
+
+        Execute the proejct
+                revel run app-name
