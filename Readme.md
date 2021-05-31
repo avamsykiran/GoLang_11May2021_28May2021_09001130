@@ -714,6 +714,11 @@ Non-Conditional Control Statements
         Installing the Framework and Command Line Tool
                 go get github.com/revel/revel
                 go get github.com/revel/cmd/revel
+                
+                go get github.com/revel/modules/static
+                go get github.com/garyburd/redigo/redis
+                go get github.com/patrickmn/go-cache
+                go get github.com/bradfitz/gomemcache/memcache
 
         Creating the project
                 revel new app-name
