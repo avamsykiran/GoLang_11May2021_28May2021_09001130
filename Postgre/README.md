@@ -211,14 +211,86 @@ RDBMS
         ---------------------------------------------
 
             SELECT      *|COL1,COL2,COL3                //PROJECTION
-             FROM       TABLE_AND_JOINS                 //DATA SOURCE
-             WHERE      COND                            //PRE-GROUPING FILTRATION
-             GROUP BY   COL1,COL2,...                   //GROUPING
-             HAVING     COND                            //POST-GROUPING FILTRATION
-             ORDER BY   COL1,COL2...                    //SORTING
+            [ FROM       TABLE_AND_JOINS         ]        //DATA SOURCE
+            [ WHERE      COND                    ]        //PRE-GROUPING FILTRATION
+            [ GROUP BY   COL1,COL2,...           ]        //GROUPING
+            [ HAVING     COND                    ]        //POST-GROUPING FILTRATION
+            [ ORDER BY   COL1,COL2...            ]        //SORTING
 
-             
+            WHERE Clause - PRE-GROUPING FILTRATION
+            ---------------------------------------
+
+                =
+                <
+                >
+                <>
+                <=
+                >=
+
+                like
+                is null
+                is not null
+                in 
+                between .. and ..
+                
+                and
+                or
+                not
+
+            Aggregate Functions
+            -----------------------------------
+
+                MIN         
+                MAX
+                SUM
+                AVG
+                COUNT
+
+            Sub-Queries
+            -------------------------------------
+
+                select ename,hiredate
+                from emp
+                where hiredate = (select min(hiredate) from emp);
+
+                select ename,hiredate,deptno
+                from emp
+                where hiredate = (select min(hiredate) from emp where deptno =10) and deptno = 10;
 
 
+            Corelated Sub Queries
+            -------------------------------------
+
+                select e1.ename,e1.hiredate,e1.deptno
+                from emp e1
+                where e1.hiredate = (select min(e.hiredate) from emp e where e.deptno=e1.deptno);
            
+            Group By Clause - GROUPING
+            ---------------------------------------
 
+                select min(hiredate),max(hiredate),sum(sal),min(sal),max(sal),deptno
+                from emp
+                group by deptno;
+
+                select deptno,job,count(*)
+                from emp
+                group by deptno,job;
+
+                select deptno,job,count(*)
+                from emp
+                group by job,deptno;
+
+            Having Clause - Post-GRouping Filtration
+            -------------------------------------------
+
+                select deptno,job,count(*)
+                from emp
+                group by job,deptno
+                having count(*)>=2;
+
+            Order By Clause - Sorting
+            --------------------------------------------
+
+                select * from emp order by ename;
+                select * from emp order by ename desc;
+                select * from emp order by deptno,empno;
