@@ -179,7 +179,6 @@ RDBMS
 
         ALTER TABLE tableName   ADD colName datatype constraint
         ALTER TABLE tableName   DROP colName
-        ALTER TABLE tableName   MODIFY colName datatype constraint
         ALTER TABLE tableName   ALTER COLUMN colName TYPE datatype
         ALTER TABLE tableName   ADD constraint constraint_name constraintDefinition
         ALTER TABLE tableName   DROP constraint constraint_name
@@ -187,13 +186,38 @@ RDBMS
 
         alter table contact_groups add colxyz numeric;
         alter table contact_groups alter column colxyz type int;
-        alter table contact_groups modify colxyz int not null;
         alter table contact_groups drop column colxyz;
 
         alter table contact_groups add constraint unq_contacts_groups UNIQUE(grp_name);
         alter table contact_groups drop constraint unq_contacts_groups;
 
-        
+        Data Manipulation Language
+        ---------------------------------------------
+
+        INSERT INTO table_name
+        VALUES(VAL1,VAL2,VAL3.....) //order of col in table definition
+
+        INSERT INTO table_name(col1,col2,col3)
+        VALUES(VAL1,VAL2,VAL3.....) //order of col in caommand
+
+        UPDATE  table_name
+        SET     col1=value,col2=value...
+        [WHERE  cond];
+
+        DELETE FROM table_name
+        [WHERE  cond];
+    
+        Data Retrival Language
+        ---------------------------------------------
+
+            SELECT      *|COL1,COL2,COL3                //PROJECTION
+             FROM       TABLE_AND_JOINS                 //DATA SOURCE
+             WHERE      COND                            //PRE-GROUPING FILTRATION
+             GROUP BY   COL1,COL2,...                   //GROUPING
+             HAVING     COND                            //POST-GROUPING FILTRATION
+             ORDER BY   COL1,COL2...                    //SORTING
+
+             
 
 
            
