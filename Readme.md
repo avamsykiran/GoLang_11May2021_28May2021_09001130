@@ -727,4 +727,34 @@ Non-Conditional Control Statements
                 revel run app-name
 
 
+        SQL Package
+        -------------------------------------------------
+
+                RDBMS   ----- DRIVER ------   APP (golang)
+
+                database/sql
+
+                       con,err := sql.Open("drivename","database whereabouts and credits") //verify conn
+
+                       defer con.clsoe();
+
+                       con.Ping();      //open the connection for us...
+
+                       res,err := con.Exec("sql statement",...params)
+
+                       row,err := con.QueryRow("select staements",..params)
+                       
+                       rows,err := con.Query("select staements",..params)
+
+                       row.Scan(...............)
+
+                Postgre SQL driver
+                ==============================================
+                        
+                        driver name "postgres"
+                        go get github.com/lib/pq
+
+
+
+
         

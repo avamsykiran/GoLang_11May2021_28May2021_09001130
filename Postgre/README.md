@@ -406,8 +406,8 @@ RDBMS
                 V	Shift digits
                 EEEE	Scientific notation
 
-                    SELECT to_char(1210, '9999.99');
-                    1210.00
+                    SELECT to_char(210, '0999.99');
+                    0210.00
 
                     SELECT to_char(1210.7, '9G999.99');
                     1,210.70
