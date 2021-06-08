@@ -724,7 +724,7 @@ Non-Conditional Control Statements
                 revel new app-name
 
         Execute the proejct
-                revel run app-name
+                revel run -a app-name
 
 
         SQL Package
